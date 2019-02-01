@@ -147,16 +147,30 @@ def editor_example():
     """This editor example shows how to interact with holodeck worlds while they are being built
     in the Unreal Engine. Most people that use holodeck will not need this.
     """
-    sensors = [Sensors.RGB_CAMERA, Sensors.LOCATION_SENSOR, Sensors.VELOCITY_SENSOR]
+    sensors = [Sensors.ORIENTATION_SENSOR, Sensors.VIEWPORT_CAPTURE]
     agent = AgentDefinition("uav0", agents.UavAgent, sensors)
     env = HolodeckEnvironment(agent, start_world=False)
-    env.agents["uav0"].set_control_scheme(1)
+    import cv2
+    import csv
+    import random
+    import math
     command = [0, 0, 10, 50]
 
-    for i in range(10):
-        env.reset()
-        for _ in range(1000):
-            state, reward, terminal, _ = env.step(command)
+    with open('data/orientations.csv', mode='w') as employee_file:
+        orientation_writer = csv.writer(employee_file, delimiter=',')
+
+        for i in range(1):
+            env.reset()
+            for j in range(2000):
+                state, reward, terminal, _ = env.step(command)
+                image = state[Sensors.VIEWPORT_CAPTURE][:, :, 0:3]
+                dir = state[Sensors.ORIENTATION_SENSOR]
+                img_name = "data/im" + str(j) + ".jpg"
+                cv2.imwrite(img_name, image)
+                row = [img_name, str(dir[0][0]), str(dir[0][1]), str(dir[0][2]),
+                                 str(dir[1][0]), str(dir[1][1]), str(dir[1][2]),
+                                 str(dir[2][0]), str(dir[2][1]), str(dir[2][2])]
+                orientation_writer.writerow(row)
 
 
 def editor_multi_agent_example():
@@ -189,4 +203,4 @@ if __name__ == "__main__":
         holodeck.install("DefaultWorlds")
         print(holodeck.package_info("DefaultWorlds"))
 
-    uav_example()
+    editor_example()
