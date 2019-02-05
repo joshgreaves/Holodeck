@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Tessellate by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>BYU Holodeck</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header" class="dark" style="background: url('sunrise_Moment.jpg') no-repeat center; background-size: cover;">
+				<header>
+					<h1>BYU Holodeck</h1>
+					<p>A high-fidelity simulator for deep reinforcement learning</p>
+				</header>
+				<footer>
+				  <a href="#about" class="button scrolly">About</a>				  
+				  <a href="#demo" class="button scrolly">Demo</a>
+				  <a href="#docs" class="button scrolly">Get Started</a>
+				  <a href="https://github.com/byu-pccl/holodeck" class="button scrolly">Github</a>
+				  <a href="https://holodeck.readthedocs.io" class="button scrolly">Docs</a>
+				</footer>
+			</section>
+
+		<!-- First -->
+			<section id="about" class="main">
+				<header>
+					<div class="container">
+						<h2>Holodeck puts virtual agents in realistic, immersive environments</h2>
+						<p>Holodeck is a simulator based on the Unreal Engine that can be used for research,
+							classes, or fun. It consists of agents (including humanoid robots and UAVs),
+							environments (such as cities, forests, and deserts), Linux and Windows support,
+							and a set of python bindings that make programmatic interaction easy.
+							Plus, it can be run headlessly and/or containerized for massively parallel deep
+							reinforcement learning research. </p>
+					</div>
+				</header>
+				<div class="content dark style1 featured">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-leaf"></span></span>
+									<header>
+										<h3>Simplicity</h3>
+									</header>
+									<p>Holodeck uses a simple interface similar to that of OpenAI Gym for 
+										loading and interacting with environments. Not only is it simple 
+										to use, but we have created custom docker containers to make it 
+										easy for you to run in a containerized environment.</p>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-picture-o"></span></span>
+									<header>
+										<h3>Fidelity</h3>
+									</header>
+									<p>We have built Holodeck on top of the Unreal Engine so that we can
+										leverage high-fidelity virtual environments. In a Holodeck environment,
+										each agent can experience the world through a number of
+										high-dimensional sensors.</p>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-gears"></span></span>
+									<header>
+										<h3>Customizability</h3>
+									</header>
+									<p>Holodeck comes with a number of pre-built environments,
+										and we also give you options to adapt those environments to your needs.
+										From python, you can easily choose the time of day,
+										the length of the day/night cycle, and even the weather.</p>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrow">
+								<section>
+									<span class="feature-icon"><span class="icon fa-bolt"></span></span>
+									<header>
+										<h3>Performance</h3>
+									</header>
+									<p>We use memory mapped files as a form of shared memory to reduce
+										latency in communicating high-dimensional sensor data.
+										This allows researchers to take advantage of Holodeck's
+										accelerated rendering.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Second -->
+			<section id="demo" class="main">
+				<header>
+					<div class="container">
+						<h2 style="padding-bottom:1em;">Check out the demo</h2>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/_huewiGqfrs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+				</header>
+				<div class="content dark style2">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-narrow">
+								<section>
+									<h3>Multiple challenging environments</h3>
+									<p>Holodeck has been designed to serve as a new set of challenging benchmarks, in the spirit of OpenAI Gym and the ALE simulator. </p>
+								</section>
+							</div>
+							<div class="col-8 col-12-narrow">
+								<div class="row">
+									<div class="col-6"><a class="image fit"><img src="gifs/urban_city.gif" alt="" /></a></div>
+									<div class="col-6"><a class="image fit"><img src="gifs/europeanforest.gif" alt="" /></a></div>
+									<div class="col-6"><a class="image fit"><img src="gifs/cyber_straight.gif" alt="" /></a></div>
+									<div class="col-6"><a class="image fit"><img src="gifs/redwood_forest.gif" alt="" /></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Third -->
+			<section id="docs" class="main">
+				<header>
+					<div class="container">
+						<h2>Get Started</h2>
+						<p>Check out the <a href="https://github.com/byu-pccl/holodeck">github page</a> for installation instructions.</p>
+						<p>View the documentation available at <a href="https://holodeck.readthedocs.io">readthedocs</a>.</p>
+					</div>
+				</header>
+			</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/eve_byu" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://facebook.com/pccl.byu" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="https://instagram.com/pccl_byu" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/byu-pccl/holodeck" class="icon fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; BYU PCCL 2018. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
