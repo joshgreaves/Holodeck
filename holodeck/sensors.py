@@ -17,6 +17,10 @@ class HolodeckSensor(object):
         command_to_send = SetSensorEnabledCommand(self.agent_name, self.name, enable)
         self._client.command_center.enque_command(command_to_send)
 
+    def edit_sensor_member(self, member, value):
+        command_to_send = EditSensorCommand(self.agent_name, self.name, member, value)
+        self._client.command_center.enque_command(command_to_send)
+
     @property
     def sensor_data(self):
         return self._sensor_data_buffer
@@ -205,7 +209,7 @@ class PressureSensor(HolodeckSensor):
 
 
 class SensorDefinition(object):
-    __sensor_keys__ = {"RGBCamera": RGBCamera,
+    _sensor_keys__ = {"RGBCamera": RGBCamera,
                        "TaskSensor": TaskSensor,
                        "ViewportCapture": ViewportCapture,
                        "OrientationSensor": OrientationSensor,

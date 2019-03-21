@@ -164,7 +164,7 @@ class SpawnAgentCommand(Command):
         Args:
             agent_type (str or type): The type of agent to spawn.
         """
-        if not isinstance(str, agent_type):
+        if not isinstance(agent_type, str):
             agent_type = agent_type.agent_type  # Get str from type
         self.add_string_parameters(agent_type)
 
@@ -436,6 +436,52 @@ class RemoveSensorCommand(Command):
         sensor: String representing the name of the sensor to be removed
         """
         self.add_string_parameters(sensor)
+
+
+class EditSensorCommand(Command):
+    def __init__(self, agent, sensor, member, value):
+        """Sets the command type to AddSensor and initializes the object.
+        :param agent: Name of the agent that has sensor
+        :param sensor: Name of the sensor to edit
+        :param member: Name of the member to edit
+        :param value: Value to change member to
+        """
+        Command.__init__(self)
+        self._command_type = "EditSensor"
+        self.set_agent(agent)
+        self.set_sensor(sensor)
+        self.set_member(member)
+        self.set_value(value)
+
+    def set_agent(self, agent):
+        """Set the agent name.
+        Positional Arguments:
+        agent: String representing the name of the agent that has sensor
+        """
+        self.add_string_parameters(agent)
+
+    def set_sensor(self, sensor):
+        """Set the sensor name.
+        Positional Arguments:
+        sensor: String representing the name of the sensor to edit
+        """
+        self.add_string_parameters(sensor)
+
+    def set_member(self, member):
+        """Set the member name.
+        Positional Arguments:
+        sensor: String representing the name of the member to edit
+        """
+        self.add_string_parameters(member)
+
+    def set_value(self, value):
+        """Set the member value.
+        Positional Arguments:
+        sensor: Value to change member to
+        """
+        if not isinstance(value, str):
+            value = str(value)
+        self.add_string_parameters(value)
 
 
 class RenderViewportCommand(Command):
