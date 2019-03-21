@@ -495,7 +495,7 @@ class HolodeckEnvironment(object):
         reward = None
         terminal = None
         for sensor in self._state_dict[self._agent.name]:
-            if sensor is "TaskSensor":
+            if "Task" in sensor:
                 reward = self._state_dict[self._agent.name][sensor][0]
                 terminal = self._state_dict[self._agent.name][sensor][1] == 1
 
